@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import edu.icet.rental.util.PaymentMethod;
 import edu.icet.rental.util.PaymentStatus;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,20 +24,22 @@ public class PaymentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long paymentID;
 
-    @NotEmpty(message = "This should not be blank")
+    @NotNull(message = "Booking ID should not be null")
     private Long bookingID;
 
-    @NotEmpty(message = "This should not be blank")
+    @NotNull(message = "Amount should not be null")
     private Double amount;
 
+    @NotNull(message = "Payment date is required")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    @JsonFormat(pattern = "MM/dd/yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd") // Match with frontend (React)
     private LocalDate paymentDate;
 
-    @NotEmpty(message = "This should not be blank")
+    @Enumerated(EnumType.STRING)
+    @NotNull(message = "Payment method is required")
     private PaymentMethod method;
 
-    @NotEmpty(message = "This should not be blank")
+    @Enumerated(EnumType.STRING)
+    @NotNull(message = "Payment status is required")
     private PaymentStatus status;
-
 }

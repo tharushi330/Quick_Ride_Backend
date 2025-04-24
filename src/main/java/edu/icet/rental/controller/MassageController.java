@@ -1,6 +1,6 @@
 package edu.icet.rental.controller;
 
-import edu.icet.rental.dto.Massage;
+import edu.icet.rental.dto.Message;
 import edu.icet.rental.service.MassageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -9,14 +9,14 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/massage")
+@RequestMapping("api/message")
 @CrossOrigin
 public class MassageController {
     final MassageService massageService;
 
     @PostMapping("/add")
-    public void add(@RequestBody Massage massage) {
-        massageService.add(massage);
+    public void add(@RequestBody Message message) {
+        massageService.add(message);
     }
 
     @DeleteMapping("/delete")
@@ -25,7 +25,7 @@ public class MassageController {
     }
 
     @GetMapping("/get-all")
-    public List<Massage> getAll() {
+    public List<Message> getAll() {
         return massageService.getAll();
     }
 

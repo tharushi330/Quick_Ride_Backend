@@ -23,7 +23,7 @@ public class MaintenanceEntity {
 
     private Long maintenanceID;
 
-    @NotEmpty(message = "This should not be blank")
+    @NotNull(message = "This should not be blank")
     private Long vehicleID;
 
     @NotEmpty(message = "address should not be blank")

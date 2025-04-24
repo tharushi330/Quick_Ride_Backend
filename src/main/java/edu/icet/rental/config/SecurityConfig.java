@@ -46,9 +46,12 @@ public class SecurityConfig {
                                         "/login/**",
                                         "/register/**",
                                         "/refresh_token/**",
-                                        "/api/vehicle/**",
+                                        "/api/vehicle/get-all",
                                         "/api/vehicle/add",
-                                        "api/booking/**"
+                                        "/api/booking/add",
+                                        "/api/booking/get-all",
+                                        "/api/message/add"
+
 
                                 )
                                 .permitAll()

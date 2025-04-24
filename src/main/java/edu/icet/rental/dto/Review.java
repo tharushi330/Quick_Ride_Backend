@@ -17,10 +17,10 @@ import java.util.Date;
 public class Review {
     private Long reviewID;
 
-    @NotEmpty(message = "This should not be blank")
+    @NotNull(message = "This should not be blank")
     private Long userID;
 
-    @NotEmpty(message = "This should not be blank")
+    @NotNull(message = "This should not be blank")
     private Long vehicleID;
 
     @NotEmpty(message = "This should not be blank")

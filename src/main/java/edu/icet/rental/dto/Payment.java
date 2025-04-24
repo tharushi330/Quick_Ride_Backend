@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import edu.icet.rental.util.PaymentMethod;
 import edu.icet.rental.util.PaymentStatus;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,19 +20,19 @@ import java.time.LocalDate;
 public class Payment {
     private Long paymentID;
 
-    @NotEmpty(message = "This should not be blank")
+    @NotNull(message = "Booking ID is required")
     private Long bookingID;
 
-    @NotEmpty(message = "This should not be blank")
+    @NotNull(message = "Amount is required")
     private Double amount;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    @JsonFormat(pattern = "MM/dd/yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd") // Match with React date input format
     private LocalDate paymentDate;
 
-    @NotEmpty(message = "This should not be blank")
+    @NotNull(message = "Payment method is required")
     private PaymentMethod method;
 
-    @NotEmpty(message = "This should not be blank")
+    @NotNull(message = "Payment status is required")
     private PaymentStatus status;
 }

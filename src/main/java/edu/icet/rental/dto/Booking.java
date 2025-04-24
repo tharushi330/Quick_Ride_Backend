@@ -21,7 +21,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @ToString
 public class Booking {
-    @NotEmpty(message = "This should not be blank")
+
+
     private Long bookingID;
 
     @NotEmpty(message = "User ID should not be blank")
@@ -35,7 +36,7 @@ public class Booking {
     @Size(min = 10, max = 10)
     private String contact;
 
-    @NotEmpty(message = "This should not be blank")
+
     private Long vehicleID;
 
     @NotNull(message = "This should not be blank")
@@ -63,5 +64,6 @@ public class Booking {
 
     @Enumerated(EnumType.STRING)
     private BookingStatus bookingStatus;
+
 
 }
