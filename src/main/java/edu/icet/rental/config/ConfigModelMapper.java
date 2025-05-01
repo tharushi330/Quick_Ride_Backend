@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ConfigModelMapper {
-    @Bean
+    @Bean //IOC Container eka athule object ekak hadanwa
     public ModelMapper getMapper() {
         return new ModelMapper();
     }

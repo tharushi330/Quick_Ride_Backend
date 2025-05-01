@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Builder //lombok eken object eka build pattern eken hadanna
 @Entity
 @Table(name = "admin")
 public class AdminEntity implements UserDetails {

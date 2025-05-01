@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.function.Function;
 
 @Service
-public class JwtService {
+public class JwtService { //token generate , validate karanna
     private String secretKey = "841cafeb27c496ab504f0f6e1b86f94d2482d7e8b2959dd460323ad85123284d";
 
     private long accessTokenExpire = 86400000;

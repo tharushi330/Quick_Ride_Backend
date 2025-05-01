@@ -32,7 +32,7 @@ public class PaymentEntity {
 
     @NotNull(message = "Payment date is required")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    @JsonFormat(pattern = "yyyy-MM-dd") // Match with frontend (React)
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate paymentDate;
 
     @Enumerated(EnumType.STRING)

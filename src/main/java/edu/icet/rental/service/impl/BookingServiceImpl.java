@@ -24,11 +24,6 @@ public class BookingServiceImpl implements BookingService {
         BookingEntity bookingEntity = mapper.map(booking, BookingEntity.class);
         bookingEntity.setBookingDateTime(new Date());
 
-//        if (booking.getStartDate() != null && booking.getEndDate() != null) {
-//            long days = ChronoUnit.DAYS.between(booking.getStartDate(), booking.getEndDate());
-//            double tot = days*booking
-//            bookingEntity.setTotalPrice();
-//        }
         repository.save(bookingEntity);
 
     }

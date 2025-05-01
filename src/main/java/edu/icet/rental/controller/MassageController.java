@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/message")
+@RequestMapping("api/message") //API URL path eka map karanawa
 @CrossOrigin
 public class MassageController {
     final MassageService massageService;

@@ -19,7 +19,7 @@ import java.io.IOException;
 
 @Component
 @RequiredArgsConstructor
-public class JwtAuthenticationFilter extends OncePerRequestFilter {
+public class JwtAuthenticationFilter extends OncePerRequestFilter { //request eken token eka aragena check krnwa
 
     private final JwtService jwtService;
     private final UserDetailsServiceImp userDetailsService;

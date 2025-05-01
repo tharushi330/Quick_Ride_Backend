@@ -20,7 +20,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {
+public class SecurityConfig { //filter eka add karanna
 
     private final UserDetailsServiceImp userDetailsServiceImp;
 
@@ -42,10 +42,10 @@ public class SecurityConfig {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
-                        req -> req.requestMatchers(
-                                        "/login/**",
-                                        "/register/**",
-                                        "/refresh_token/**",
+                        req -> req.requestMatchers( // me url walata jwt nathuwa access karanna puluwan
+                                        "/login/**",  //login wela token eka gnna
+                                        "/register/**", //register krgnn
+                                        "/refresh_token/**", //token refresh krnna
                                         "/api/vehicle/get-all",
                                         "/api/vehicle/add",
                                         "/api/booking/add",
